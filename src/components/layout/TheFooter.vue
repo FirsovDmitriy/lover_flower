@@ -1,11 +1,9 @@
 <template>
-  <p>Home view</p>
+  <footer class="footer">footer</footer>
 </template>
 
 <script>
-
 export default {
-  name: 'HomeView',
-  components: {}
+  name: 'TheFooter'
 }
 </script>
