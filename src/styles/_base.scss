@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  align-items: center;
+  line-height: normal;
+  color: inherit;
+  text-transform: uppercase;
+  transition: all $transition-duration $timing-function;
+}
+
+.title {
+  font: {
+    family: Cormorant;
+    weight: 400;
+  }
+  text-transform: uppercase;
+  &--level-1 {
+    font: {
+      size: rem(200);
+      weight: 300;
+    }
+    letter-spacing: 40px;
+  }
+}

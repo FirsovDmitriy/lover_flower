@@ -1,6 +1,8 @@
 <template>
   <the-header />
-  <main class="page__content"></main>
+  <main class="page__content">
+    <router-view></router-view>
+  </main>
   <the-footer />
 </template>
 

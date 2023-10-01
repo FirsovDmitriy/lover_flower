@@ -1,9 +1,19 @@
 <template>
-  <footer class="footer">footer</footer>
+  <footer class="footer">
+    <app-container>
+      Footer
+    </app-container>
+  </footer>
 </template>
 
 <script>
+import AppContainer from '@/components/UI/AppContainer.vue'
+
 export default {
-  name: 'TheFooter'
+  name: 'TheFooter',
+
+  components: {
+    AppContainer
+  }
 }
 </script>

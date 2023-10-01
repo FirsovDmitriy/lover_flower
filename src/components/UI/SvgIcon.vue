@@ -1,7 +1,10 @@
 <template>
-  <svg :class="className" xmlns="http://www.w3.org/2000/svg">
-    <title v-if="title">{{ title }}</title>
-    <use :xlink:href="iconPath" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+  <svg
+    class="svg-icon"
+    :width="width"
+    :height="height"
+  >
+    <use :xlink:href="iconPath" />
   </svg>
 </template>
 
@@ -14,10 +17,13 @@ export default {
       type: String,
       required: true
     },
-
-    title: {
+    width: {
       type: String,
-      default: null
+      default: '24'
+    },
+    height: {
+      type: String,
+      default: '24'
     }
   },
 
@@ -32,16 +38,14 @@ export default {
     },
 
     className () {
-      return 'svg-icon svg-icon--' + this.name
+      return 'svg-icon'
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
   .svg-icon {
     fill: currentColor;
-    height: 24px;
-    width: 24px;
   }
 </style>

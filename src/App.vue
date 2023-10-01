@@ -28,6 +28,7 @@ export default {
     weight: 300;
     size: $text-base;
   }
+  line-height: normal;
   color: $primary-text-color;
 }
 .page__wrapper {

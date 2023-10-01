@@ -17,3 +17,13 @@ button {
   border: none;
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+svg,
+img {
+  display: flex;
+}
