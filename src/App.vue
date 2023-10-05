@@ -30,11 +30,12 @@ export default {
   }
   line-height: normal;
   color: $primary-text-color;
+  overflow-x: hidden;
 }
 .page__wrapper {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   background-color: $primary-bg-color;
 }
 .page__content {

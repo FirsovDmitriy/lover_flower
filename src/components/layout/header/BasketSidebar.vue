@@ -1,13 +1,36 @@
 <template>
-  <div class="basket">
-    <button class="basket__button button">
-      <svg-icon
-        name="handbag"
-        width="30"
-        height="30"
-      />
+  <button
+    class="cart-button button"
+    @click="open = true"
+  >
+    <svg-icon
+      name="handbag"
+      width="30"
+      height="30"
+    />
     </button>
-  </div>
+
+    <Teleport to="body">
+      <div
+        class="cart"
+        :class="{
+          'cart--hide': !open,
+          'cart--show': open
+        }"
+      >
+        <div class="cart__header">
+          <p class="cart__title">Ваша корзина</p>
+          <button class="cart__close button" @click="open = false">
+            <svg-icon
+              name="close"
+              width="30"
+              height="30"
+            />
+          </button>
+        </div>
+      </div>
+    </Teleport>
+
 </template>
 
 <script>
@@ -18,15 +41,57 @@ export default {
 
   components: {
     SvgIcon
+  },
+
+  data () {
+    return {
+      open: false
+    }
   }
 }
 </script>
 
-<style lang="scss">
-.basket {
-  /* display: flex; */
+<style lang="scss" scoped>
+.cart-button {
+  @include hover() {
+    color: $secondary-color;
+  }
 }
-.basket__button {
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: rem(420);
+  height: 100%;
+  padding: rem(20) rem(30);
+  background: $primary-bg-color;
+  transition: transform $transition-duration $timing-function;
+  &--hide {
+    transform: translateX(100%);
+  }
+  &--show {
+    transform: translateX(0);
+  }
+}
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart__title {
+  font: {
+    size: rem(30);
+    weight: 700;
+  }
+  line-height: normal;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: $primary-color;
+}
+.cart__close {
+  color: $primary-color;
   @include hover() {
     color: $secondary-color;
   }
