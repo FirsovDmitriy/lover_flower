@@ -10,7 +10,9 @@ p {
   margin: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -30,4 +32,11 @@ a {
 svg,
 img {
   display: flex;
+}
+
+input,
+textarea {
+  color: inherit;
+  background-color: transparent;
+  outline: none;
 }
